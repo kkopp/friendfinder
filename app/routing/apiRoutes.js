@@ -11,17 +11,19 @@ module.exports = function (app) {
 
   app.post ('/api/friends', function (req, res) {
 
-    // var newFriend = req.body;
+    var newFriend = req.body;
 
-    // newFriend.routeName = newFriend.name
-    //   .replace (/\s+/g, '')
-    //   .toLowerCase ();
+    newFriend.routeName = newFriend.name
+      .replace (/\s+/g, '');
 
-    // console.log (newFriend);
+    newFriend.routeName = newFriend.photo;
+    newFriend.routeName = newFriend.scores;
 
-    // friends.push (newFriend);
+    console.log (newFriend);
 
-    // res.json (newFriend);
+    friends.push (newFriend);
+
+    res.json (newFriend);
   });
 
 };
