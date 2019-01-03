@@ -17,26 +17,26 @@ module.exports = function (app) {
 
     var newFriendName = '';
     var newFriendPhoto = '';
-    var totalScore = 1000;
+    var scoreSum = 1000;
 
     for (var i = 0; i < friends.length; i++) {
       var diff = 0;
       for (var j = 0; j < scores.length; j++) {
         diff += Math.abs(+friends[i].scores[j] - +scores[j]);
       }
-      if (diff < totalScore) {
-        totalScore = diff;
+      if (diff < scoreSum) {
+        scoreSum = diff;
         newFriendName = friends[i].name;
         newFriendPhoto = friends[i].photo;
       }
     }
     
-    console.log('Closest match found = ' + totalScore);
-    console.log('Friend name = ' + newFriendName);
-    console.log('Friend photo = ' + newFriendPhoto);
+    // console.log('Closest match found = ' + scoreSum);
+    // console.log('Friend name = ' + newFriendName);
+    // console.log('Friend photo = ' + newFriendPhoto);
 
-    friends.push (newFriend);
+    friends.push(newFriend);
 
-    res.json ({newFriendName: newFriendName, newFriendPhoto: newFriendPhoto});
+    res.json({newFriendName: newFriendName, newFriendPhoto: newFriendPhoto});
   });
 };
