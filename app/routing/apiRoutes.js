@@ -17,23 +17,23 @@ module.exports = function (app) {
 
     var newFriendName = '';
     var newFriendPhoto = '';
-    var totalDiff = 1000;
+    var totalScore = 1000;
 
     for (var i = 0; i < friends.length; i++) {
       var diff = 0;
       for (var j = 0; j < scores.length; j++) {
-        diff += Math.abs (friends[i].score[j] - scores[j]);
+        diff += Math.abs(+friends[i].scores[j] - +scores[j]);
+      }
+      if (diff < totalScore) {
+        totalScore = diff;
+        newFriendName = friends[i].name;
+        newFriendPhoto = friends[i].photo;
       }
     }
-
-    if (diff < totalDiff) {
-      console.log('Closest match found = ' + diff);
-      console.log('Friend name = ' + friends[i].name);
-      console.log('Friend image = ' + friends[i].photo);
-      totalDiff = diff;
-      newFriendName = friends[i].name;
-      newFriendPhoto = friends[i].image;
-    }
+    
+    console.log('Closest match found = ' + totalScore);
+    console.log('Friend name = ' + newFriendName);
+    console.log('Friend photo = ' + newFriendPhoto);
 
     friends.push (newFriend);
 
