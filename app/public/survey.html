@@ -11,14 +11,48 @@
 
     <!-- Bootstrap, FontAwesome, Google Fonts -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
 </head>
+
+<style>
+    
+    .modal-dialog {
+        width: 460px;
+        height: 600px !important;
+            }     
+    
+    .modal-header {
+        padding:16px 16px;
+        border-bottom:2px dotted #002200;
+     }
+     
+     #matchNameRow {
+        padding:5px 5px;
+        font-size: 25px;
+        font-family: 'Satisfy', cursive;
+     }
+
+     .matchPhoto {
+        width: 75%;
+        height: auto;
+        padding:5px 20px;
+     }
+
+</style>
+
 
 <body>
 
@@ -199,22 +233,28 @@
     </div>
 
 
-      <div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Your Match:</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header text-center d-block">
+                    <h5 class="modal-title d-inline-block" id="ModalLongTitle">Your New Friend Is...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center" id="matchNameRow"><span class="matchName"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center"><img class="matchPhoto" src="#">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-              <span class="matchName"></span>
-              <img class="matchPhoto" src="#">
-            </div>
-            
-          </div>
         </div>
+    </div>
 
 
     <script type="text/javascript">
